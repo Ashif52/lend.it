@@ -1,694 +1,604 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LendIt — Borrow Anything Nearby Instantly</title>
-    <meta
-      name="description"
-      content="LendIt is a hyperlocal platform that connects people who need products with nearby individuals who have them."
-    />
-    <link
-      rel="shortcut icon"
-      href="assets/images/logo-icon.png"
-      type="image/x-icon"
-    />
-    <link rel="icon" href="assets/images/logo-icon.png" type="image/x-icon" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- FontAwesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="output.css" />
-    <style>
-      @keyframes orbit {
-        0% {
-          transform: rotate(0deg) translateY(calc(var(--radius) * 1px))
-            rotate(0deg);
-        }
 
-        100% {
-          transform: rotate(360deg) translateY(calc(var(--radius) * 1px))
-            rotate(-360deg);
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LendIt — Borrow Anything Nearby Instantly</title>
+  <meta name="description"
+    content="LendIt is a hyperlocal platform that connects people who need products with nearby individuals who have them." />
+  <link rel="shortcut icon" href="assets/images/logo-icon.png" type="image/x-icon" />
+  <link rel="icon" href="assets/images/logo-icon.png" type="image/x-icon" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg);
       }
 
-      #orbiting-effect {
-        position: relative;
-        width: 100%;
-        height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: visible !important;
+      100% {
+        transform: rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg);
       }
+    }
 
-      /* Remove box around globe across all browsers */
-      .hero-visual,
-      #hero-globe,
-      #hero-globe *,
-      canvas {
-        border: none !important;
-        box-shadow: none !important;
-        background: transparent !important;
-        outline: none !important;
-        -webkit-tap-highlight-color: transparent !important;
-        -webkit-appearance: none !important;
-        -moz-appearance: none !important;
-        appearance: none !important;
-      }
+    #orbiting-effect {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible !important;
+    }
 
-      /* Fix for some browsers showing box/outline on focus or 3D elements */
-      canvas:focus,
-      canvas:active {
-        outline: none !important;
-        border: none !important;
-      }
-    </style>
-  </head>
+    /* Remove box around globe across all browsers */
+    .hero-visual,
+    #hero-globe,
+    #hero-globe *,
+    canvas {
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      outline: none !important;
+      -webkit-tap-highlight-color: transparent !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
+    }
 
-  <body>
-    <!-- Animated Background Gradients -->
-    <div class="bg-gradient-1"></div>
-    <div class="bg-gradient-2"></div>
+    /* Fix for some browsers showing box/outline on focus or 3D elements */
+    canvas:focus,
+    canvas:active {
+      outline: none !important;
+      border: none !important;
+    }
+  </style>
+</head>
 
-    <!-- Navigation -->
-    <header class="navbar">
-      <div class="container nav-container">
-        <a href="#" class="logo"
-          ><img
-            src="assets/images/logo-icon.png"
-            alt="LendIt"
-            class="logo-img"
-          />
-          Lend<span>It</span></a
-        >
-        <nav class="nav-links">
-          <a href="#how-it-works">How it Works</a>
-          <a href="#features">Features</a>
-          <a href="#vision">Vision</a>
-          <a href="#roadmap">Roadmap</a>
-        </nav>
-        <a href="#join" class="btn btn-outline">Join Early Access</a>
+<body>
+  <!-- Animated Background Gradients -->
+  <div class="bg-gradient-1"></div>
+  <div class="bg-gradient-2"></div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt" class="logo-img" />
+        Lend<span>It</span></a>
+      <nav class="nav-links">
+        <a href="#how-it-works">How it Works</a>
+        <a href="#features">Features</a>
+        <a href="#vision">Vision</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+      <a href="#join" class="btn btn-outline">Join Early Access</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero-container">
+        <!-- 1a. Left Side: Content -->
+        <div class="hero-content fade-in-up">
+          <!-- <div class="badge">🚀 The Future of Local Sharing</div> -->
+          <h1 class="hero-title">
+            Borrow Anything Nearby — <span>Instantly.</span>
+          </h1>
+          <p class="hero-description">
+            A hyperlocal platform that connects people who need products with
+            nearby individuals who have them. No shipping, no buying—just
+            sharing.
+          </p>
+          <div class="hero-buttons">
+            <a href="#join" class="btn btn-primary">Join Early Access</a>
+            <a href="#how-it-works" class="btn btn-secondary">See How It Works <i
+                class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- 1b. Right Side: Globe Animation -->
+        <div class="hero-visual fade-in-up delay-1" id="hero-globe">
+          <!-- HeroGlobe will be rendered here via React -->
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <!-- 1. Hero Section -->
-      <section class="hero" id="hero">
-        <div class="container hero-container">
-          <!-- 1a. Left Side: Content -->
-          <div class="hero-content fade-in-up">
-            <!-- <div class="badge">🚀 The Future of Local Sharing</div> -->
-            <h1 class="hero-title">
-              Borrow Anything Nearby — <span>Instantly.</span>
-            </h1>
-            <p class="hero-description">
-              A hyperlocal platform that connects people who need products with
-              nearby individuals who have them. No shipping, no buying—just
-              sharing.
-            </p>
-            <div class="hero-buttons">
-              <a href="#join" class="btn btn-primary">Join Early Access</a>
-              <a href="#how-it-works" class="btn btn-secondary"
-                >See How It Works <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-
-          <!-- 1b. Right Side: Globe Animation -->
-          <div class="hero-visual fade-in-up delay-1" id="hero-globe">
-            <!-- HeroGlobe will be rendered here via React -->
-          </div>
+    <!-- 2. How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>How It Works</h2>
+          <p>Get what you need in three simple steps.</p>
         </div>
-      </section>
-
-      <!-- 2. How It Works Section -->
-      <section class="how-it-works" id="how-it-works">
-        <div class="container">
-          <div class="section-header reveal">
-            <h2>How It Works</h2>
-            <p>Get what you need in three simple steps.</p>
-          </div>
-          <div class="steps-grid">
-            <div class="step-card reveal">
-              <div class="step-number">01</div>
-              <div class="step-icon">
-                <i class="fa-solid fa-magnifying-glass-location"></i>
-              </div>
-              <h3>Post a Request</h3>
-              <p>
-                Upload a product request or browse available items in your local
-                area.
-              </p>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-magnifying-glass-location"></i>
             </div>
-            <div class="step-card reveal delay-1">
-              <div class="step-number">02</div>
-              <div class="step-icon">
-                <i class="fa-solid fa-map-location-dot"></i>
-              </div>
-              <h3>Nearby Match</h3>
-              <p>
-                Users within your selected radius receive the request and offer
-                their items.
-              </p>
-            </div>
-            <div class="step-card reveal delay-2">
-              <div class="step-number">03</div>
-              <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
-              <h3>Borrow & Return</h3>
-              <p>
-                Pick up the item locally, use it for your project, and return it
-                safely.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2.5. App Demo Section -->
-      <section class="app-demo" id="app-demo">
-        <div class="container app-demo-container">
-          <div class="section-header reveal">
-            <h2>Experience LendIt Before Launch</h2>
+            <h3>Post a Request</h3>
             <p>
-              Explore the interactive prototype and see how easily you can find
-              and borrow items from people nearby.
+              Upload a product request or browse available items in your local
+              area.
             </p>
-            <div class="demo-badges">
-              <span class="demo-badge"
-                ><i class="fa-solid fa-hand-pointer"></i> Interactive
-                Prototype</span
-              >
-              <span class="demo-badge"
-                ><i class="fa-solid fa-bolt"></i> Built with FlutterFlow</span
-              >
-            </div>
           </div>
+          <div class="step-card reveal delay-1">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <h3>Nearby Match</h3>
+            <p>
+              Users within your selected radius receive the request and offer
+              their items.
+            </p>
+          </div>
+          <div class="step-card reveal delay-2">
+            <div class="step-number">03</div>
+            <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3>Borrow & Return</h3>
+            <p>
+              Pick up the item locally, use it for your project, and return it
+              safely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="phone-frame-container reveal delay-1">
-            <div class="phone-glow"></div>
-            <div class="phone-frame">
-              <a
-                href="https://app.flutterflow.io/share/lens-mate-app-template-ul7dj7"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block w-full h-full relative group"
-              >
-                <img
-                  src="assets/images/app-preview.png"
-                  alt="LendIt App Preview"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+    <!-- 2.5. App Demo Section -->
+    <section class="app-demo" id="app-demo">
+      <div class="container app-demo-container">
+        <div class="section-header reveal">
+          <h2>Experience LendIt Before Launch</h2>
+          <p>
+            Explore the interactive prototype and see how easily you can find
+            and borrow items from people nearby.
+          </p>
+          <div class="demo-badges">
+            <span class="demo-badge"><i class="fa-solid fa-hand-pointer"></i> Interactive
+              Prototype</span>
+            <span class="demo-badge"><i class="fa-solid fa-bolt"></i> Built with FlutterFlow</span>
+          </div>
+        </div>
+
+        <div class="phone-frame-container reveal delay-1">
+          <div class="phone-glow"></div>
+          <div class="phone-frame">
+            <a href="https://app.flutterflow.io/share/lens-mate-app-template-ul7dj7" target="_blank"
+              rel="noopener noreferrer" class="block w-full h-full relative group">
+              <img src="assets/images/app-preview.png" alt="LendIt App Preview"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div
+                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
+                <!-- Atmospheric Background Blur -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/80 backdrop-blur-sm">
+                </div>
+
                 <div
-                  class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20"
-                >
-                  <!-- Atmospheric Background Blur -->
-                  <div
-                    class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/80 backdrop-blur-sm"
-                  ></div>
-
-                  <div
-                    class="relative z-10 flex flex-col items-center justify-center gap-5 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  >
+                  class="relative z-10 flex flex-col items-center justify-center gap-5 transform translate-y-10 group-hover:translate-y-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
+                  <div class="relative w-20 h-20 flex items-center justify-center rounded-full group/play">
+                    <!-- Core Glow Element -->
                     <div
-                      class="relative w-20 h-20 flex items-center justify-center rounded-full group/play"
-                    >
-                      <!-- Core Glow Element -->
-                      <div
-                        class="absolute inset-0 bg-indigo-500 rounded-full blur-xl opacity-40 group-hover/play:opacity-100 group-hover/play:scale-125 transition-all duration-500"
-                      ></div>
-
-                      <!-- Animated Outer Engagement Ring -->
-                      <div
-                        class="absolute inset-[-10px] border-[1.5px] border-white/30 rounded-full scale-[1.2] opacity-0 group-[.group:hover]:opacity-100 group-[.group:hover]:scale-100 transition-all duration-700 ease-out delay-100 flex items-center justify-center"
-                      ></div>
-                      <div
-                        class="absolute inset-[-18px] border-[1px] border-white/10 rounded-full scale-[1.3] opacity-0 group-[.group:hover]:opacity-100 group-[.group:hover]:scale-100 transition-all duration-1000 ease-out delay-150 flex items-center justify-center"
-                      ></div>
-
-                      <!-- Glass Interactive Surface -->
-                      <div
-                        class="relative w-full h-full rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl flex items-center justify-center overflow-hidden transition-all duration-300 group-hover/play:bg-white/20 group-hover/play:scale-110"
-                      >
-                        <div
-                          class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent translate-y-full group-hover/play:translate-y-0 transition-transform duration-500 ease-out"
-                        ></div>
-                        <i
-                          class="fa-solid fa-mobile-screen-button text-3xl text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)] z-10"
-                        ></i>
-                      </div>
+                      class="absolute inset-0 bg-indigo-500 rounded-full blur-xl opacity-40 group-hover/play:opacity-100 group-hover/play:scale-125 transition-all duration-500">
                     </div>
 
-                    <div class="flex flex-col items-center">
-                      <span
-                        class="text-white font-bold text-xl tracking-tight"
-                        style="text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8)"
-                        >View Prototype</span
-                      >
-                      <span
-                        class="text-indigo-300 text-[0.65rem] font-bold uppercase tracking-[0.3em] mt-2 opacity-90"
-                        style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)"
-                        >Interactive</span
-                      >
+                    <!-- Animated Outer Engagement Ring -->
+                    <div
+                      class="absolute inset-[-10px] border-[1.5px] border-white/30 rounded-full scale-[1.2] opacity-0 group-[.group:hover]:opacity-100 group-[.group:hover]:scale-100 transition-all duration-700 ease-out delay-100 flex items-center justify-center">
+                    </div>
+                    <div
+                      class="absolute inset-[-18px] border-[1px] border-white/10 rounded-full scale-[1.3] opacity-0 group-[.group:hover]:opacity-100 group-[.group:hover]:scale-100 transition-all duration-1000 ease-out delay-150 flex items-center justify-center">
+                    </div>
+
+                    <!-- Glass Interactive Surface -->
+                    <div
+                      class="relative w-full h-full rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl flex items-center justify-center overflow-hidden transition-all duration-300 group-hover/play:bg-white/20 group-hover/play:scale-110">
+                      <div
+                        class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent translate-y-full group-hover/play:translate-y-0 transition-transform duration-500 ease-out">
+                      </div>
+                      <i
+                        class="fa-solid fa-mobile-screen-button text-3xl text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.5)] z-10"></i>
                     </div>
                   </div>
+
+                  <div class="flex flex-col items-center">
+                    <span class="text-white font-bold text-xl tracking-tight"
+                      style="text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8)">View Prototype</span>
+                    <span class="text-indigo-300 text-[0.65rem] font-bold uppercase tracking-[0.3em] mt-2 opacity-90"
+                      style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8)">Interactive</span>
+                  </div>
                 </div>
-              </a>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Feature Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Platform Features</h2>
+          <p>Designed for speed, safety, and community building.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card glass-card reveal">
+            <div class="f-icon"><i class="fa-solid fa-street-view"></i></div>
+            <h3>Radius-Based Discovery</h3>
+            <p>
+              Set a custom search radius to find products available within
+              walking or driving distance instantly.
+            </p>
+          </div>
+          <div class="feature-card glass-card reveal delay-1">
+            <div class="f-icon"><i class="fa-solid fa-users"></i></div>
+            <h3>Community Lending</h3>
+            <p>
+              Connect with your neighbors. Build trust and foster a sharing
+              economy right in your community.
+            </p>
+          </div>
+          <div class="feature-card glass-card reveal">
+            <div class="f-icon"><i class="fa-solid fa-store"></i></div>
+            <h3>Local Business Integration</h3>
+            <p>
+              Local businesses offering rentals (bikes, laptops, equipment)
+              can list their inventory directly.
+            </p>
+          </div>
+          <div class="feature-card glass-card reveal delay-1">
+            <div class="f-icon"><i class="fa-solid fa-gem"></i></div>
+            <h3>Loyalty Points System</h3>
+            <p>
+              Earn points for every successful lend or borrow. Use them to
+              reduce fees on future transactions.
+            </p>
+          </div>
+          <div class="feature-card glass-card reveal">
+            <div class="f-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Privacy-First Security</h3>
+            <p>
+              Stay anonymous until the deal is made. Our secure chat protects
+              your identity and ensures safety.
+            </p>
+          </div>
+          <div class="feature-card glass-card reveal delay-1">
+            <div class="f-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>AI Smart Matching</h3>
+            <p>
+              Instantly match with nearby users who have the item you need.
+              Our smart discovery engine prioritizes the closest and most
+              relevant listings.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3.5. The Stories Section -->
+    <section class="stories" id="stories">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Why Buy? Just Borrow.</h2>
+          <p>
+            Discover how LendIt empowers everyday scenarios in your
+            neighborhood.
+          </p>
+        </div>
+
+        <!-- Story 1 -->
+        <div class="story-row reveal">
+          <div class="story-image">
+            <img src="assets/images/media__1772960641119.jpg" alt="Creative workstation" />
+          </div>
+          <div class="story-content">
+            <div class="story-badge">The Student</div>
+            <h3>Ace your finals without the premium price.</h3>
+            <p>
+              From scientific calculators and extra monitors to comfortable
+              ergonomic desk chairs. Borrow what you need to optimize your
+              study sessions or freelance sprints for just a few days.
+            </p>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="story-row reverse reveal">
+          <div class="story-image">
+            <img src="assets/images/media__1772960645842.jpg" alt="Gaming console" />
+          </div>
+          <div class="story-content">
+            <div class="story-badge">The Community</div>
+            <h3>Gear up for instant adventures.</h3>
+            <p>
+              Spontaneous weekend hike? Local soccer match? Find tents,
+              backpacks, or sports equipment instantly. Nature and activities
+              are calling—don't let the lack of gear keep you indoors.
+            </p>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="story-row reveal">
+          <div class="story-image">
+            <img src="assets/images/media__1772960652899.jpg" alt="Sports and Outdoors" />
+          </div>
+          <div class="story-content">
+            <div class="story-badge">The Explorer</div>
+            <h3>More than borrowing. It's belonging.</h3>
+            <p>
+              Every transaction builds trust in your neighborhood. Meet
+              like-minded locals, reduce environmental waste, and create a
+              sustainable, sharing-first local economy right outside your
+              door.
+            </p>
+          </div>
+        </div>
+
+        <!-- Story 4 -->
+        <div class="story-row reverse reveal">
+          <div class="story-image">
+            <img src="assets/images/media__1772960655012.jpg" alt="Students and focus" />
+          </div>
+          <div class="story-content">
+            <div class="story-badge">The Creator</div>
+            <h3>High-end gear, only when you need it.</h3>
+            <p>
+              Don't drop thousands on a podcasting mic or a DSLR camera for a
+              single weekend project. Connect with local creators and borrow
+              professional equipment for a fraction of the cost, right when
+              inspiration strikes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Story 5 -->
+        <div class="story-row reveal">
+          <div class="story-image">
+            <img src="assets/images/media__1772960714249.jpg" alt="Community connection" />
+          </div>
+          <div class="story-content">
+            <div class="story-badge">The Gamer</div>
+            <h3>Weekend gaming, zero commitment.</h3>
+            <p>
+              Want to play that exclusive new release but don't own the
+              console? Why buy an expensive system when there's an unused PS5
+              sitting in an apartment just two blocks away? Borrow, play, and
+              return.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Product Vision Section -->
+    <section class="vision" id="vision">
+      <div class="container vision-container glass-card reveal">
+        <div class="vision-content">
+          <h2>Our Vision</h2>
+          <p class="highlight">
+            Building India's largest hyperlocal sharing economy network.
+          </p>
+          <p>
+            We believe in access over ownership. By connecting local
+            communities, we aim to reduce waste, save money, and build
+            stronger, more sustainable neighborhoods.
+          </p>
+        </div>
+        <div id="orbiting-effect"></div>
+      </div>
+    </section>
+
+    <!-- 5. Market Opportunity Section -->
+    <section class="market" id="market">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Market Impact</h2>
+          <p>The sharing economy is accelerating globally.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card reveal">
+            <h3 class="counter" data-target="335">0</h3>
+            <span class="suffix">B+</span>
+            <p>Global sharing economy growth projected by 2025.</p>
+          </div>
+          <div class="stat-card reveal delay-1">
+            <h3 class="counter" data-target="80">0</h3>
+            <span class="suffix">%</span>
+            <p>Of urban dwellers prefer temporary access over ownership.</p>
+          </div>
+          <div class="stat-card reveal delay-2">
+            <h3 class="counter" data-target="50">0</h3>
+            <span class="suffix">M+</span>
+            <p>Target student & millennial market in prime urban areas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Future Roadmap Section -->
+    <section class="roadmap" id="roadmap">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Future Roadmap</h2>
+          <p>Our journey to redefine local commerce.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="phase">Phase 1</span>
+              <h3>Prototype & Validation</h3>
+              <p>
+                Developing core features, radius-matching algorithms, and
+                initial user testing.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="phase">Phase 2</span>
+              <h3>Beta Launch</h3>
+              <p>
+                Rolling out to closed student communities and local hubs to
+                establish trust networks.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="phase">Phase 3</span>
+              <h3>City-Wide Expansion</h3>
+              <p>
+                Scaling to major urban centers, onboarding local businesses
+                and rental shops.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="phase">Phase 4</span>
+              <h3>AI Trust Systems</h3>
+              <p>
+                Implementing AI-driven dynamic deposits, user credibility
+                scoring, and smart matching.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 3. Feature Section -->
-      <section class="features" id="features">
-        <div class="container">
-          <div class="section-header reveal">
-            <h2>Platform Features</h2>
-            <p>Designed for speed, safety, and community building.</p>
-          </div>
-          <div class="feature-grid">
-            <div class="feature-card glass-card reveal">
-              <div class="f-icon"><i class="fa-solid fa-street-view"></i></div>
-              <h3>Radius-Based Discovery</h3>
-              <p>
-                Set a custom search radius to find products available within
-                walking or driving distance instantly.
-              </p>
-            </div>
-            <div class="feature-card glass-card reveal delay-1">
-              <div class="f-icon"><i class="fa-solid fa-users"></i></div>
-              <h3>Community Lending</h3>
-              <p>
-                Connect with your neighbors. Build trust and foster a sharing
-                economy right in your community.
-              </p>
-            </div>
-            <div class="feature-card glass-card reveal">
-              <div class="f-icon"><i class="fa-solid fa-store"></i></div>
-              <h3>Local Business Integration</h3>
-              <p>
-                Local businesses offering rentals (bikes, laptops, equipment)
-                can list their inventory directly.
-              </p>
-            </div>
-            <div class="feature-card glass-card reveal delay-1">
-              <div class="f-icon"><i class="fa-solid fa-gem"></i></div>
-              <h3>Loyalty Points System</h3>
-              <p>
-                Earn points for every successful lend or borrow. Use them to
-                reduce fees on future transactions.
-              </p>
-            </div>
-            <div class="feature-card glass-card reveal">
+    <!-- 7. Join the Movement Section -->
+    <section class="forms-section" id="join">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Join the LendIt Network</h2>
+          <p>Whether you're looking to borrow or lend, get started below.</p>
+        </div>
+        <div class="forms-grid">
+          <!-- Buyer Form -->
+          <div class="form-card glass-card reveal">
+            <div class="form-header">
               <div class="f-icon">
-                <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
               </div>
-              <h3>Privacy-First Security</h3>
-              <p>
-                Stay anonymous until the deal is made. Our secure chat protects
-                your identity and ensures safety.
-              </p>
+              <h3>Users (Buyers)</h3>
+              <p>Find what you need in your neighborhood.</p>
             </div>
-            <div class="feature-card glass-card reveal delay-1">
-              <div class="f-icon"><i class="fa-solid fa-brain"></i></div>
-              <h3>AI Smart Matching</h3>
-              <p>
-                Instantly match with nearby users who have the item you need.
-                Our smart discovery engine prioritizes the closest and most
-                relevant listings.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3.5. The Stories Section -->
-      <section class="stories" id="stories">
-        <div class="container">
-          <div class="section-header reveal">
-            <h2>Why Buy? Just Borrow.</h2>
-            <p>
-              Discover how LendIt empowers everyday scenarios in your
-              neighborhood.
-            </p>
-          </div>
-
-          <!-- Story 1 -->
-          <div class="story-row reveal">
-            <div class="story-image">
-              <img
-                src="assets/images/media__1772960641119.jpg"
-                alt="Creative workstation"
-              />
-            </div>
-            <div class="story-content">
-              <div class="story-badge">The Student</div>
-              <h3>Ace your finals without the premium price.</h3>
-              <p>
-                From scientific calculators and extra monitors to comfortable
-                ergonomic desk chairs. Borrow what you need to optimize your
-                study sessions or freelance sprints for just a few days.
-              </p>
-            </div>
-          </div>
-
-          <!-- Story 2 -->
-          <div class="story-row reverse reveal">
-            <div class="story-image">
-              <img
-                src="assets/images/media__1772960645842.jpg"
-                alt="Gaming console"
-              />
-            </div>
-            <div class="story-content">
-              <div class="story-badge">The Community</div>
-              <h3>Gear up for instant adventures.</h3>
-              <p>
-                Spontaneous weekend hike? Local soccer match? Find tents,
-                backpacks, or sports equipment instantly. Nature and activities
-                are calling—don't let the lack of gear keep you indoors.
-              </p>
-            </div>
-          </div>
-
-          <!-- Story 3 -->
-          <div class="story-row reveal">
-            <div class="story-image">
-              <img
-                src="assets/images/media__1772960652899.jpg"
-                alt="Sports and Outdoors"
-              />
-            </div>
-            <div class="story-content">
-              <div class="story-badge">The Explorer</div>
-              <h3>More than borrowing. It's belonging.</h3>
-              <p>
-                Every transaction builds trust in your neighborhood. Meet
-                like-minded locals, reduce environmental waste, and create a
-                sustainable, sharing-first local economy right outside your
-                door.
-              </p>
-            </div>
-          </div>
-
-          <!-- Story 4 -->
-          <div class="story-row reverse reveal">
-            <div class="story-image">
-              <img
-                src="assets/images/media__1772960655012.jpg"
-                alt="Students and focus"
-              />
-            </div>
-            <div class="story-content">
-              <div class="story-badge">The Creator</div>
-              <h3>High-end gear, only when you need it.</h3>
-              <p>
-                Don't drop thousands on a podcasting mic or a DSLR camera for a
-                single weekend project. Connect with local creators and borrow
-                professional equipment for a fraction of the cost, right when
-                inspiration strikes.
-              </p>
-            </div>
-          </div>
-
-          <!-- Story 5 -->
-          <div class="story-row reveal">
-            <div class="story-image">
-              <img
-                src="assets/images/media__1772960714249.jpg"
-                alt="Community connection"
-              />
-            </div>
-            <div class="story-content">
-              <div class="story-badge">The Gamer</div>
-              <h3>Weekend gaming, zero commitment.</h3>
-              <p>
-                Want to play that exclusive new release but don't own the
-                console? Why buy an expensive system when there's an unused PS5
-                sitting in an apartment just two blocks away? Borrow, play, and
-                return.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. Product Vision Section -->
-      <section class="vision" id="vision">
-        <div class="container vision-container glass-card reveal">
-          <div class="vision-content">
-            <h2>Our Vision</h2>
-            <p class="highlight">
-              Building India's largest hyperlocal sharing economy network.
-            </p>
-            <p>
-              We believe in access over ownership. By connecting local
-              communities, we aim to reduce waste, save money, and build
-              stronger, more sustainable neighborhoods.
-            </p>
-          </div>
-          <div id="orbiting-effect"></div>
-        </div>
-      </section>
-
-      <!-- 5. Market Opportunity Section -->
-      <section class="market" id="market">
-        <div class="container">
-          <div class="section-header reveal">
-            <h2>Market Impact</h2>
-            <p>The sharing economy is accelerating globally.</p>
-          </div>
-          <div class="stats-grid">
-            <div class="stat-card reveal">
-              <h3 class="counter" data-target="335">0</h3>
-              <span class="suffix">B+</span>
-              <p>Global sharing economy growth projected by 2025.</p>
-            </div>
-            <div class="stat-card reveal delay-1">
-              <h3 class="counter" data-target="80">0</h3>
-              <span class="suffix">%</span>
-              <p>Of urban dwellers prefer temporary access over ownership.</p>
-            </div>
-            <div class="stat-card reveal delay-2">
-              <h3 class="counter" data-target="50">0</h3>
-              <span class="suffix">M+</span>
-              <p>Target student & millennial market in prime urban areas.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. Future Roadmap Section -->
-      <section class="roadmap" id="roadmap">
-        <div class="container">
-          <div class="section-header reveal">
-            <h2>Future Roadmap</h2>
-            <p>Our journey to redefine local commerce.</p>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item reveal">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content glass-card">
-                <span class="phase">Phase 1</span>
-                <h3>Prototype & Validation</h3>
-                <p>
-                  Developing core features, radius-matching algorithms, and
-                  initial user testing.
-                </p>
+            <form
+              action="https://script.google.com/macros/s/AKfycbzwcFIqKhhB-EINyUsyrswYAAAie3-W6cH0gBs5VfrgNVLQaz982Od15XIS1y_WdSkq/exec"
+              method="POST" class="clean-form buyer-form">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="Full Name" placeholder="e.g. Jane Doe" required />
               </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content glass-card">
-                <span class="phase">Phase 2</span>
-                <h3>Beta Launch</h3>
-                <p>
-                  Rolling out to closed student communities and local hubs to
-                  establish trust networks.
-                </p>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="Email" placeholder="jane@example.com" required />
               </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content glass-card">
-                <span class="phase">Phase 3</span>
-                <h3>City-Wide Expansion</h3>
-                <p>
-                  Scaling to major urban centers, onboarding local businesses
-                  and rental shops.
-                </p>
+              <div class="form-group">
+                <label>What do you want to borrow?</label>
+                <input type="text" name="Item Needed" placeholder="e.g. PS5, Power Drill, DSLR Camera" required />
               </div>
-            </div>
-            <div class="timeline-item reveal">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content glass-card">
-                <span class="phase">Phase 4</span>
-                <h3>AI Trust Systems</h3>
-                <p>
-                  Implementing AI-driven dynamic deposits, user credibility
-                  scoring, and smart matching.
-                </p>
-              </div>
-            </div>
+              <button type="submit" class="btn btn-secondary w-100">
+                Join as User
+              </button>
+            </form>
           </div>
-        </div>
-      </section>
 
-      <!-- 7. Join the Movement Section -->
-      <section class="forms-section" id="join">
-        <div class="container">
-          <div class="section-header reveal">
-            <h2>Join the LendIt Network</h2>
-            <p>Whether you're looking to borrow or lend, get started below.</p>
-          </div>
-          <div class="forms-grid">
-            <!-- Buyer Form -->
-            <div class="form-card glass-card reveal">
-              <div class="form-header">
-                <div class="f-icon">
-                  <i class="fa-solid fa-bag-shopping"></i>
-                </div>
-                <h3>Users (Buyers)</h3>
-                <p>Find what you need in your neighborhood.</p>
+          <!-- Vendor Form -->
+          <div class="form-card glass-card reveal delay-1">
+            <div class="form-header">
+              <div class="f-icon"><i class="fa-solid fa-store"></i></div>
+              <h3>Vendors (Sellers)</h3>
+              <p>Monetize your unused items easily.</p>
+            </div>
+            <form
+              action="https://script.google.com/macros/s/AKfycbzwcFIqKhhB-EINyUsyrswYAAAie3-W6cH0gBs5VfrgNVLQaz982Od15XIS1y_WdSkq/exec"
+              method="POST" class="clean-form vendor-form">
+              <div class="form-group">
+                <label>Business / Individual Name</label>
+                <input type="text" name="Business Name" placeholder="e.g. Acme Rentals" required />
               </div>
-              <form
-                action="https://script.google.com/macros/s/AKfycbzwcFIqKhhB-EINyUsyrswYAAAie3-W6cH0gBs5VfrgNVLQaz982Od15XIS1y_WdSkq/exec"
-                method="POST"
-                class="clean-form buyer-form"
-              >
-                <div class="form-group">
-                  <label>Full Name</label>
-                  <input
-                    type="text"
-                    name="Full Name"
-                    placeholder="e.g. Jane Doe"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label>Email Address</label>
-                  <input
-                    type="email"
-                    name="Email"
-                    placeholder="jane@example.com"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label>What do you want to borrow?</label>
-                  <input
-                    type="text"
-                    name="Item Needed"
-                    placeholder="e.g. PS5, Power Drill, DSLR Camera"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn btn-secondary w-100">
-                  Join as User
-                </button>
-              </form>
-            </div>
-
-            <!-- Vendor Form -->
-            <div class="form-card glass-card reveal delay-1">
-              <div class="form-header">
-                <div class="f-icon"><i class="fa-solid fa-store"></i></div>
-                <h3>Vendors (Sellers)</h3>
-                <p>Monetize your unused items easily.</p>
+              <div class="form-group">
+                <label>Contact Email</label>
+                <input type="email" name="Email" placeholder="vendor@example.com" required />
               </div>
-              <form
-                action="https://script.google.com/macros/s/AKfycbzwcFIqKhhB-EINyUsyrswYAAAie3-W6cH0gBs5VfrgNVLQaz982Od15XIS1y_WdSkq/exec"
-                method="POST"
-                class="clean-form vendor-form"
-              >
-                <div class="form-group">
-                  <label>Business / Individual Name</label>
-                  <input
-                    type="text"
-                    name="Business Name"
-                    placeholder="e.g. Acme Rentals"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label>Contact Email</label>
-                  <input
-                    type="email"
-                    name="Email"
-                    placeholder="vendor@example.com"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label>What do you have available?</label>
-                  <textarea
-                    name="Available Items"
-                    placeholder="e.g. Power tools,Gaming consoles, camping gear..."
-                    rows="3"
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">
-                  Apply as Vendor
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- 8. Footer -->
-    <footer>
-      <div class="container footer-container">
-        <div class="footer-brand">
-          <a href="#" class="logo"
-            ><img
-              src="assets/images/logo-icon.png"
-              alt="LendIt"
-              class="logo-img"
-            />
-            Lend<span>It</span></a
-          >
-          <p>Borrow anything nearby. Instantly.</p>
-        </div>
-        <div class="footer-links">
-          <div class="f-column">
-            <h4>Product</h4>
-            <a href="#how-it-works">How it works</a>
-            <a href="#features">Features</a>
-            <a href="#roadmap">Roadmap</a>
-          </div>
-          <div class="f-column">
-            <h4>Company</h4>
-            <a href="#vision">About Us</a>
-            <a href="mailto:hello@lendit.co">Contact</a>
-            <a href="#">Privacy Policy</a>
-          </div>
-          <div class="f-column">
-            <h4>Social</h4>
-            <div class="social-icons">
-              <a href="#"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
+              <div class="form-group">
+                <label>What do you have available?</label>
+                <textarea name="Available Items" placeholder="e.g. Power tools,Gaming consoles, camping gear..."
+                  rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Apply as Vendor
+              </button>
+            </form>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 LendIt Technologies. All rights reserved.</p>
-      </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="assets/js/bundle.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <!-- 8. Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt" class="logo-img" />
+          Lend<span>It</span></a>
+        <div class="product-attribution">
+          <span class="attribution-label">A Product of</span>
+          <a href="https://www.alcas.in/" target="_blank" class="alcas-link">
+            <span class="alcas-name">ALCAS</span>
+          </a>
+        </div>
+        <p>Borrow anything nearby. Instantly.</p>
+      </div>
+      <div class="footer-links">
+        <div class="f-column">
+          <h4>Product</h4>
+          <a href="#how-it-works">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#roadmap">Roadmap</a>
+        </div>
+        <div class="f-column">
+          <h4>Company</h4>
+          <a href="#vision">About Us</a>
+          <a href="mailto:hello@lendit.co">Contact</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="f-column">
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LendIt Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/bundle.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
