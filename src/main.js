@@ -48,3 +48,27 @@ if (orbitingRootElement) {
     const orbitingRoot = createRoot(orbitingRootElement);
     orbitingRoot.render(<OrbitingCirclesDemo />);
 }
+
+import { DottedMap } from './components/ui/dotted-map.jsx';
+
+// 3. Render Dotted Map Section
+const dottedMapRootElement = document.getElementById('dotted-map-container');
+if (dottedMapRootElement) {
+    const dottedMapRoot = createRoot(dottedMapRootElement);
+    // Render markers matching the user prompt (Tokyo, Sydney, etc.)
+    dottedMapRoot.render(
+        <DottedMap
+            markerColor="#a855f7"
+            dotColor="#ffffff20"
+            dotRadius={0.4}
+            markers={[
+                { lat: 40.7128, lng: -74.0060, size: 0.6 }, // New York
+                { lat: 51.5074, lng: -0.1278, size: 0.8 }, // London
+                { lat: 25.2048, lng: 55.2708, size: 0.6 }, // Dubai
+                { lat: 1.3521, lng: 103.8198, size: 0.8 }, // Singapore
+                { lat: -33.8688, lng: 151.2093, size: 0.6 }, // Sydney
+                { lat: 35.6762, lng: 139.6503, size: 0.8 } // Tokyo
+            ]}
+        />
+    );
+}

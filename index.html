@@ -75,7 +75,7 @@
       <nav class="nav-links">
         <a href="#how-it-works">How it Works</a>
         <a href="#features">Features</a>
-        <a href="#vision">Vision</a>
+        <a href="#community">Community</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
       <a href="#join" class="btn btn-outline">Join Early Access</a>
@@ -383,52 +383,52 @@
       </div>
     </section>
 
-    <!-- 4. About Us Section -->
-    <section class="about-us" id="about">
-      <div class="container about-container reveal">
-        <div class="about-grid grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- 4. Global Contact Map Section (Untitled UI Style) -->
+    <section class="py-24" id="contact">
+      <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+        <!-- Header -->
+        <div class="text-center mb-16 reveal">
+          <p class="text-accent font-semibold tracking-wide text-sm mb-3">Contact us</p>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            We'd love to hear from you
+          </h2>
+          <p class="text-gray-400 text-lg">
+            Our friendly team is always here to chat.
+          </p>
+        </div>
 
-          <!-- Left: Text Content -->
-          <div class="about-content z-10">
-            <h2 class="about-heading mb-6">
-              Building the Future of<br /><span class="text-accent gradient-text">Hyperlocal Sharing</span>
-            </h2>
+        <!-- Dotted Map -->
+        <div class="w-full flex justify-center mb-20 reveal">
+          <div class="w-full max-w-5xl h-[300px] md:h-[450px] lg:h-[500px]" id="dotted-map-container">
+            <!-- React MagicUI Dotted Map mounts here -->
+          </div>
+        </div>
 
-            <div class="about-paragraphs space-y-6 text-muted font-light leading-relaxed">
-              <p>
-                Many products sit unused in homes while others need them temporarily.
-                Why buy an expensive power drill or a camping tent when there's an unused one sitting just two blocks
-                away?
-              </p>
+        <!-- 3 Columns (Support, Sales, Phone) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center reveal">
 
-              <p>
-                <strong>LendIt</strong> connects people within their community so they can lend, borrow, and share items
-                easily.
-                We are breaking down the barriers of traditional ownership by building a hyper-local network powered by
-                trust.
-              </p>
-
-              <p>
-                Our vision is to create a community-driven sharing economy where access becomes more valuable than
-                ownership, fostering sustainability and neighborly connection.
-              </p>
-            </div>
-
-            <div class="mt-8 flex gap-4 about-actions">
-              <a href="#join" class="btn btn-primary">Join the Network</a>
-            </div>
+          <!-- Column 1 -->
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Support</h3>
+            <p class="text-gray-400 mb-4">Our friendly team is here to help.</p>
+            <a href="mailto:support@lendit.co"
+              class="text-accent hover:text-white transition-colors font-medium">support@lendit.co</a>
           </div>
 
-          <!-- Right: Visual Illustration / Lottie Animation -->
-          <div class="about-visual relative z-10 flex justify-center items-center">
-            <!-- Glow background effect behind visual -->
-            <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full scale-110 pointer-events-none"></div>
-            <!-- The Lottie Player container -->
-            <div id="about-lottie" class="w-full max-w-md h-auto relative drop-shadow-2xl">
-              <!-- Using a highly rated public sharing/community animation -->
-              <lottie-player src="https://lottie.host/79c933b9-1fec-45f8-8422-b5e1975eade1/bZ24g61Eqe.json"
-                background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
-            </div>
+          <!-- Column 2 -->
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Sales</h3>
+            <p class="text-gray-400 mb-4">Questions or queries? Get in touch!</p>
+            <a href="mailto:sales@lendit.co"
+              class="text-accent hover:text-white transition-colors font-medium">sales@lendit.co</a>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="text-xl font-bold text-white mb-2">Phone</h3>
+            <p class="text-gray-400 mb-4">Mon-Fri from 8am to 5pm.</p>
+            <a href="tel:+15550000000" class="text-accent hover:text-white transition-colors font-medium">+1 (555)
+              000-0000</a>
           </div>
 
         </div>
@@ -612,7 +612,7 @@
         </div>
         <div class="f-column">
           <h4>Company</h4>
-          <a href="#vision">About Us</a>
+          <a href="#community">About Us</a>
           <a href="mailto:hello@lendit.co">Contact</a>
           <a href="#">Privacy Policy</a>
         </div>
