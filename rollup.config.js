@@ -2,7 +2,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import { babel } from '@rollup/plugin-babel';
-import preserveDirectives from 'rollup-plugin-preserve-directives';
 
 export default {
     input: 'src/main.js',
@@ -18,7 +17,6 @@ export default {
         warn(warning);
     },
     plugins: [
-        preserveDirectives(),
         replace({
             'process.env.NODE_ENV': JSON.stringify('production'),
             preventAssignment: true
