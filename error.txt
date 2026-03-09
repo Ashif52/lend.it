@@ -1,0 +1,11 @@
+[36m
+[1msrc/main.js[22m → [1massets/js/bundle.js[22m...[39m
+[1m[31m[!] [1m(plugin commonjs--resolver) RollupError: Expression expected[22m[1m[39m[22m
+src/main.js
+[2m    at getRollupError (C:\Users\Administrator\.gemini\antigravity\scratch\lendit-landing\node_modules\rollup\dist\shared\parseAst.js:287:41)
+    at convertProgram (C:\Users\Administrator\.gemini\antigravity\scratch\lendit-landing\node_modules\rollup\dist\shared\parseAst.js:1177:26)
+    at Object.parseAst [as parse] (C:\Users\Administrator\.gemini\antigravity\scratch\lendit-landing\node_modules\rollup\dist\shared\parseAst.js:2162:87)
+    at Object.transform (file:///C:/Users/Administrator/.gemini/antigravity/scratch/lendit-landing/node_modules/rollup-plugin-preserve-directives/dist/index.js:18:24)
+    at C:\Users\Administrator\.gemini\antigravity\scratch\lendit-landing\node_modules\rollup\dist\shared\rollup.js:3392:40[22m
+
+
