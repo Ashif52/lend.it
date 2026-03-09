@@ -383,21 +383,55 @@
       </div>
     </section>
 
-    <!-- 4. Product Vision Section -->
-    <section class="vision" id="vision">
-      <div class="container vision-container glass-card reveal">
-        <div class="vision-content">
-          <h2>Our Vision</h2>
-          <p class="highlight">
-            Building India's largest hyperlocal sharing economy network.
-          </p>
-          <p>
-            We believe in access over ownership. By connecting local
-            communities, we aim to reduce waste, save money, and build
-            stronger, more sustainable neighborhoods.
-          </p>
+    <!-- 4. About Us Section -->
+    <section class="about-us" id="about">
+      <div class="container about-container reveal">
+        <div class="about-grid grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          <!-- Left: Text Content -->
+          <div class="about-content z-10">
+            <h2 class="about-heading mb-6">
+              Building the Future of<br /><span class="text-accent gradient-text">Hyperlocal Sharing</span>
+            </h2>
+
+            <div class="about-paragraphs space-y-6 text-muted font-light leading-relaxed">
+              <p>
+                Many products sit unused in homes while others need them temporarily.
+                Why buy an expensive power drill or a camping tent when there's an unused one sitting just two blocks
+                away?
+              </p>
+
+              <p>
+                <strong>LendIt</strong> connects people within their community so they can lend, borrow, and share items
+                easily.
+                We are breaking down the barriers of traditional ownership by building a hyper-local network powered by
+                trust.
+              </p>
+
+              <p>
+                Our vision is to create a community-driven sharing economy where access becomes more valuable than
+                ownership, fostering sustainability and neighborly connection.
+              </p>
+            </div>
+
+            <div class="mt-8 flex gap-4 about-actions">
+              <a href="#join" class="btn btn-primary">Join the Network</a>
+            </div>
+          </div>
+
+          <!-- Right: Visual Illustration / Lottie Animation -->
+          <div class="about-visual relative z-10 flex justify-center items-center">
+            <!-- Glow background effect behind visual -->
+            <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full scale-110 pointer-events-none"></div>
+            <!-- The Lottie Player container -->
+            <div id="about-lottie" class="w-full max-w-md h-auto relative drop-shadow-2xl">
+              <!-- Using a highly rated public sharing/community animation -->
+              <lottie-player src="https://lottie.host/79c933b9-1fec-45f8-8422-b5e1975eade1/bZ24g61Eqe.json"
+                background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+            </div>
+          </div>
+
         </div>
-        <div id="orbiting-effect"></div>
       </div>
     </section>
 
