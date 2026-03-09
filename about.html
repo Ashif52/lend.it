@@ -24,7 +24,12 @@
 </head>
 
 <body>
-    <div class="bg-gradient-1" style="height: 60vh;"></div>
+    <!-- Global background glows -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-accent/20 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-pink-500/10 blur-[150px] rounded-full">
+        </div>
+    </div>
 
     <!-- Navigation -->
     <header class="navbar"
@@ -32,129 +37,323 @@
         <div class="container nav-container items-center">
             <a href="index.html" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt" class="logo-img" />
                 Lend<span>It</span></a>
-            <nav class="nav-links">
+            <nav class="nav-links hidden md:flex">
                 <a href="index.html#how-it-works">How it Works</a>
                 <a href="index.html#features">Features</a>
-                <a href="about.html" class="active">About Us</a>
+                <a href="about.html" class="active text-accent">About Us</a>
                 <a href="index.html#roadmap">Roadmap</a>
             </nav>
             <a href="index.html#join" class="btn btn-outline">Join Early Access</a>
         </div>
     </header>
 
-    <main class="min-h-screen pt-24 pb-24 relative px-6 md:px-12 w-full max-w-[1400px] mx-auto overflow-hidden">
-        <!-- Top Hero -->
-        <div class="max-w-7xl mx-auto mb-20 text-center relative z-10 pt-10">
-            <div
-                class="inline-block mb-6 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold text-sm tracking-wide uppercase">
-                Our Story</div>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">Redefining <span
-                    class="bg-clip-text text-transparent bg-gradient-to-r from-accent to-pink-500">Ownership</span></h1>
-            <p class="text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">We are on a mission to make everything
-                accessible without the burden of buying. Discover, share, and connect with your local community.</p>
-        </div>
+    <main class="min-h-screen relative w-full overflow-hidden">
 
-        <!-- Core Pillars / Multi-Column Grid -->
-        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-28 relative z-10">
-
-            <!-- Pillar 1 -->
-            <div
-                class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-300 group">
+        <!-- Section 1 — About Hero -->
+        <section class="pt-32 pb-24 text-center px-4 relative">
+            <div class="max-w-4xl mx-auto reveal">
                 <div
-                    class="w-16 h-16 rounded-3xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-earth-americas"></i></div>
-                <h3 class="text-3xl font-bold text-white mb-4">Hyperlocal Focus</h3>
-                <p class="text-gray-400 leading-relaxed text-lg">By keeping sharing within a 5-mile radius, we eliminate
-                    shipping costs and carbon emissions, creating a tighter-knit neighborhood where everyone benefits.
+                    class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm font-medium text-gray-300">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span> Our Mission
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+                    Building the Future of <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-pink-500">Hyperlocal
+                        Sharing</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
+                    LendIt connects people with nearby individuals who already have the items they need, replacing
+                    ownership with instant, community-driven access.
                 </p>
             </div>
+        </section>
 
-            <!-- Pillar 2 -->
-            <div
-                class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(34,197,94,0.15)] hover:border-green-500/30 transition-all duration-300 group">
-                <div
-                    class="w-16 h-16 rounded-3xl bg-green-500/10 text-green-400 flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-leaf"></i></div>
-                <h3 class="text-3xl font-bold text-white mb-4">Sustainability</h3>
-                <p class="text-gray-400 leading-relaxed text-lg">Fewer products need to be manufactured when we share
-                    what we already have. Less waste, more utility, and a massive step towards a circular economy.</p>
-            </div>
-
-            <!-- Pillar 3 -->
-            <div
-                class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)] hover:border-accent/40 transition-all duration-300 group">
-                <div
-                    class="w-16 h-16 rounded-3xl bg-accent/10 text-accent flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-shield-halved"></i></div>
-                <h3 class="text-3xl font-bold text-white mb-4">Trust & Safety</h3>
-                <p class="text-gray-400 leading-relaxed text-lg">A powerful platform built from the ground up on
-                    verified identities, dynamic deposits, and secure transactions, ensuring peace of mind for
-                    everybody.</p>
-            </div>
-
-        </div>
-
-        <!-- Extended Lottie Vision Section -->
-        <div
-            class="max-w-7xl mx-auto bg-black/40 backdrop-blur-xl border border-white/5 p-10 lg:p-20 rounded-[3rem] relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            <div class="space-y-6">
-                <div
-                    class="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 font-semibold text-xs tracking-[0.2em] uppercase mb-4">
-                    The Result</div>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-[1.2]">A Smarter Way to<br />Access
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-accent">Everything.</span>
-                </h2>
-                <p class="text-xl text-gray-400 font-light leading-relaxed mt-6 mb-8">
-                    LendIt isn't just an app—it is a fundamental shift in how we interact with the material world. We
-                    are replacing the buy-use-store cycle with a seamless, on-demand sharing infrastructure.
-                </p>
-                <a href="contact.html"
-                    class="inline-flex items-center gap-2 group text-accent font-bold text-lg hover:text-white transition-colors">
-                    Partner with our vision <span
-                        class="bg-accent/20 px-2 py-1 rounded-full group-hover:bg-white/20 transition-colors"><i
-                            class="fa-solid fa-arrow-right text-sm"></i></span>
-                </a>
-            </div>
-
-            <div class="relative flex justify-center items-center">
-                <div class="absolute inset-0 bg-accent/10 blur-[120px] rounded-full scale-150 -z-10"></div>
-                <div class="w-full max-w-lg aspect-square">
-                    <lottie-player src="https://lottie.host/79c933b9-1fec-45f8-8422-b5e1975eade1/bZ24g61Eqe.json"
-                        background="transparent" speed="1" style="width: 100%; height: 100%;" loop
-                        autoplay></lottie-player>
+        <!-- Section 2 — Who We Are -->
+        <section class="py-24 relative z-10">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">Who We Are</h2>
+                        <div class="space-y-6 text-lg text-gray-400 leading-relaxed font-light">
+                            <p class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1.5"></i>
+                                LendIt is a product built to solve everyday access problems.</p>
+                            <p class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1.5"></i> Many
+                                useful items remain unused in homes while others need them temporarily.</p>
+                            <p class="flex items-start gap-3"><i class="fa-solid fa-check text-accent mt-1.5"></i> The
+                                platform enables communities to share resources efficiently and securely.</p>
+                        </div>
+                    </div>
+                    <div class="relative reveal scale-95 hover:scale-100 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-accent/10 blur-[80px] rounded-full"></div>
+                        <div
+                            class="bg-white/5 border border-white/10 rounded-[2rem] p-8 backdrop-blur-sm relative z-10 w-full aspect-square flex items-center justify-center">
+                            <lottie-player
+                                src="https://lottie.host/79c933b9-1fec-45f8-8422-b5e1975eade1/bZ24g61Eqe.json"
+                                background="transparent" speed="1" style="width: 100%; height: 100%;" loop
+                                autoplay></lottie-player>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Section 3 — What the Product Does -->
+        <section class="py-24 bg-black/40 border-y border-white/5 relative z-10">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold text-white mb-4">What LendIt Does</h2>
+                    <p class="text-gray-400 text-lg">A smarter way to access the things you need.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Feature 1 -->
+                    <div
+                        class="bg-[#0A0A0C] border border-white/5 p-8 rounded-3xl hover:border-accent/30 transition-colors reveal group">
+                        <div
+                            class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-location-crosshairs"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Radius-based Discovery</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Find what you need from verified users within a
+                            close geographical radius.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div
+                        class="bg-[#0A0A0C] border border-white/5 p-8 rounded-3xl hover:border-accent/30 transition-colors reveal delay-1 group">
+                        <div
+                            class="w-12 h-12 bg-pink-500/10 text-pink-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-handshake-angle"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Community Lending</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Borrow peer-to-peer securely with built-in
+                            identity checks and item insurance.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div
+                        class="bg-[#0A0A0C] border border-white/5 p-8 rounded-3xl hover:border-accent/30 transition-colors reveal delay-2 group">
+                        <div
+                            class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-store"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Local Business Auth</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Integrated tracking for local rental shops to
+                            digitize their inventory easily.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div
+                        class="bg-[#0A0A0C] border border-white/5 p-8 rounded-3xl hover:border-accent/30 transition-colors reveal delay-3 group">
+                        <div
+                            class="w-12 h-12 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-crown"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-3">Loyalty Rewards</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Earn community points and discounts the more
+                            you share and borrow.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 — Product Vision -->
+        <section class="py-32 relative z-10 overflow-hidden">
+            <div
+                class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent">
+            </div>
+            <div class="container mx-auto px-6 max-w-4xl text-center relative reveal">
+                <div
+                    class="w-20 h-20 mx-auto bg-gradient-to-br from-accent to-pink-500 rounded-2xl flex items-center justify-center text-3xl text-white shadow-[0_0_50px_rgba(168,85,247,0.4)] mb-8">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Our Product Vision</h2>
+                <p class="text-2xl text-gray-300 font-light leading-relaxed">
+                    "LendIt aims to build the largest hyperlocal sharing economy network, where people can access
+                    products instantly without owning them."
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5 — Development Phases -->
+        <section class="py-24 bg-black/40 border-y border-white/5 relative z-10">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold text-white mb-4">Development Phases</h2>
+                    <p class="text-gray-400 text-lg">Our systematic approach to scaling the network.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                    <!-- Horizontal line connector -->
+                    <div class="hidden md:block absolute top-12 left-6 right-6 h-[1px] bg-white/10"></div>
+
+                    <div class="relative reveal p-6">
+                        <div
+                            class="w-8 h-8 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center mx-auto mb-6 relative z-10 box-content">
+                            <div class="w-2.5 h-2.5 rounded-full bg-accent"></div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-accent text-sm font-bold uppercase tracking-wide">Phase 1</span>
+                            <h4 class="text-white font-semibold mt-2 mb-2">Prototype</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Prototype development and FlutterFlow MVP
+                                testing.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative reveal delay-1 p-6">
+                        <div
+                            class="w-8 h-8 rounded-full bg-[#121214] border-2 border-white/20 flex items-center justify-center mx-auto mb-6 relative z-10 box-content transition-colors hover:border-pink-500">
+                            <div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-gray-500 text-sm font-bold uppercase tracking-wide">Phase 2</span>
+                            <h4 class="text-white font-semibold mt-2 mb-2">Beta Launch</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Private beta testing in high-density
+                                student communities.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative reveal delay-2 p-6">
+                        <div
+                            class="w-8 h-8 rounded-full bg-[#121214] border-2 border-white/20 flex items-center justify-center mx-auto mb-6 relative z-10 box-content transition-colors hover:border-pink-500">
+                            <div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-gray-500 text-sm font-bold uppercase tracking-wide">Phase 3</span>
+                            <h4 class="text-white font-semibold mt-2 mb-2">Urban Expansion</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">Expansion into high-demand urban
+                                neighborhoods.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative reveal delay-3 p-6">
+                        <div
+                            class="w-8 h-8 rounded-full bg-[#121214] border-2 border-white/20 flex items-center justify-center mx-auto mb-6 relative z-10 box-content transition-colors hover:border-pink-500">
+                            <div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-gray-500 text-sm font-bold uppercase tracking-wide">Phase 4</span>
+                            <h4 class="text-white font-semibold mt-2 mb-2">AI & Automation</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">AI-powered smart matching and fully
+                                automated logistics.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 — ROI Potential -->
+        <section class="py-24 relative z-10">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                    <div class="reveal">
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+                                <div
+                                    class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-pink-500 mb-2">
+                                    $200B+</div>
+                                <div class="text-gray-400 text-sm">Global Sharing Economy</div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+                                <div
+                                    class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-pink-500 mb-2">
+                                    $15B+</div>
+                                <div class="text-gray-400 text-sm">Indian Resale/Rental Market</div>
+                            </div>
+                        </div>
+                        <div class="bg-accent/10 border border-accent/20 rounded-2xl p-6 text-center">
+                            <div class="text-xl font-bold text-white mb-1">1–2% Market Capture</div>
+                            <div class="text-accent text-sm">Target early-stage opportunity</div>
+                        </div>
+                    </div>
+
+                    <div class="reveal">
+                        <h2 class="text-4xl font-bold mb-6 text-white">ROI & Monetization</h2>
+                        <p class="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+                            LendIt operates in a rapidly expanding sharing economy, catering to the increasing demand
+                            for sustainable rental access. Our highly scalable marketplace model creates robust
+                            financial returns.
+                        </p>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex items-center gap-4 border-b border-white/5 pb-4"><i
+                                    class="fa-solid fa-arrow-right text-accent"></i> Transaction fees on successful
+                                rentals</li>
+                            <li class="flex items-center gap-4 border-b border-white/5 pb-4"><i
+                                    class="fa-solid fa-arrow-right text-accent"></i> Seamless local business API
+                                partnerships</li>
+                            <li class="flex items-center gap-4"><i class="fa-solid fa-arrow-right text-accent"></i>
+                                Premium placements & verified user subscriptions</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7 — Global Community Map -->
+        <section class="py-32 bg-black/40 border-t border-white/5 text-center relative z-10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Our Growing Network
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-16">
+                    LendIt connects people across cities and neighborhoods, building the future of hyperlocal sharing.
+                </p>
+
+                <div class="w-full max-w-6xl mx-auto h-[350px] md:h-[500px] relative px-4 text-left"
+                    id="dotted-map-container">
+                    <!-- React MagicUI Dotted Map mounts here -->
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="mt-20 border-t border-white/10 pt-16 pb-8 bg-black/20 backdrop-blur-md relative z-10">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <a href="index.html" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt"
-                        class="logo-img" /> Lend<span>It</span></a>
-                <div class="product-attribution">
-                    <span class="attribution-label">A Product of</span>
-                    <a href="https://www.alcas.in/" target="_blank" class="alcas-link">
-                        <span class="alcas-name">ALCAS</span>
-                    </a>
+    <footer class="border-t border-white/10 pt-16 pb-8 bg-[#050506] relative z-10">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <a href="index.html" class="logo text-2xl font-bold flex items-center gap-2 mb-4"><img
+                            src="assets/images/logo-icon.png" alt="LendIt" class="w-8 h-8" /> Lend<span
+                            class="text-accent">It</span></a>
+                    <p class="text-gray-400 mb-6 max-w-sm">Borrow anything nearby. Instantly.</p>
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-1.5 border border-white/10">
+                        <span class="text-gray-400 text-sm">A Product of</span>
+                        <a href="https://www.alcas.in/" target="_blank"
+                            class="text-white font-medium hover:text-accent transition-colors text-sm">ALCAS</a>
+                    </div>
                 </div>
-                <p>Borrow anything nearby. Instantly.</p>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Product</h4>
+                    <div class="flex flex-col space-y-3">
+                        <a href="index.html#how-it-works" class="text-gray-400 hover:text-white transition-colors">How
+                            it works</a>
+                        <a href="index.html#features"
+                            class="text-gray-400 hover:text-white transition-colors">Features</a>
+                        <a href="index.html#roadmap"
+                            class="text-gray-400 hover:text-white transition-colors">Roadmap</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <div class="flex flex-col space-y-3">
+                        <a href="about.html" class="text-accent hover:text-white transition-colors">About Us</a>
+                        <a href="mailto:hello@lendit.co"
+                            class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <div class="f-column">
-                    <h4>Product</h4>
-                    <a href="index.html#how-it-works">How it works</a>
-                    <a href="index.html#features">Features</a>
-                    <a href="index.html#roadmap">Roadmap</a>
-                </div>
-                <div class="f-column">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="privacy.html">Privacy Policy</a>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 LendIt Technologies. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i
+                            class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
