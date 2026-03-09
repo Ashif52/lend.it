@@ -2,6 +2,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import { babel } from '@rollup/plugin-babel';
+import preserveDirectives from 'rollup-plugin-preserve-directives';
 
 export default {
     input: 'src/main.js',
@@ -9,7 +10,15 @@ export default {
         file: 'assets/js/bundle.js',
         format: 'iife',
     },
+    // We can confidently disable these warnings because they are perfectly fine for our vanilla react setup
+    onwarn(warning, warn) {
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE' || warning.message.includes('"use client"')) {
+            return;
+        }
+        warn(warning);
+    },
     plugins: [
+        preserveDirectives(),
         replace({
             'process.env.NODE_ENV': JSON.stringify('production'),
             preventAssignment: true
