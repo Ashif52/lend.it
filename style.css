@@ -1353,6 +1353,70 @@ footer {
   font-size: 0.9rem;
 }
 
+
+/* =========================================================================
+   VISION SECTION (WITH ORBITING EFFECT)
+   ========================================================================= */
+.vision {
+  padding: 8rem 0;
+  background: var(--bg-deep);
+  position: relative;
+}
+
+.vision-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 5rem;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--glass-border);
+  border-radius: 40px;
+}
+
+.vision-content h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vision-content .highlight {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.vision-content p:not(.highlight) {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+#orbiting-effect {
+  height: 550px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateY(calc(var(--radius, 120) * 1px)) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateY(calc(var(--radius, 120) * 1px)) rotate(-360deg);
+  }
+}
+
 /* =========================================================================
    ANIMATIONS & UTILITIES
    ========================================================================= */
@@ -1534,23 +1598,20 @@ footer {
   .vision-container {
     text-align: center;
     padding: 3rem 1.5rem !important;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .vision-content h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .vision-content .highlight {
     font-size: 1.2rem;
   }
 
-  .vision-content p:last-child {
-    margin: 0 auto;
-    font-size: 1rem;
-  }
-
   #orbiting-effect {
-    height: 350px !important;
+    height: 400px !important;
     margin-top: 2rem;
   }
 
