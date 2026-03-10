@@ -4,182 +4,983 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us — LendIt</title>
-    <meta name="description" content="The vision and mission behind LendIt." />
+    <title>About Us — LendIt | Redefining How Communities Share</title>
+    <meta name="description"
+        content="LendIt is building the infrastructure for hyperlocal sharing economies. Learn about our mission, platform, and the market opportunity." />
     <link rel="shortcut icon" href="assets/images/logo-icon.png" type="image/x-icon" />
     <link rel="icon" href="assets/images/logo-icon.png" type="image/x-icon" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="output.css" />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
+        /* ============================================================
+       ABOUT PAGE — Dedicated Section Styles
+       Matches index.html design system exactly.
+       ============================================================ */
+
+        /* ── About Hero ──────────────────────────────────────────── */
+        .about-hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
         }
 
-        .reveal {
+        .about-hero-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .about-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .about-badge {
+            color: #a5b4fc;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 999px;
+            margin-bottom: 2rem;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .about-hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .about-hero-title span {
+            background: var(--gradient-text);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .about-hero-desc {
+            font-family: var(--font-main);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ── Who We Are ──────────────────────────────────────────── */
+        .who-section {
+            padding: 8rem 0;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .who-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .who-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .who-content strong {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        /* Illustration Card */
+        .who-card {
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .who-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            opacity: 0.5;
+        }
+
+        .who-card-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .who-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .who-card>p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .who-mini-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .who-mini-stat {
+            padding: 1rem 0.5rem;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .who-mini-stat strong {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .who-mini-stat span {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+        }
+
+        /* ── What LendIt Does ────────────────────────────────────── */
+        .what-section {
+            padding: 8rem 0;
+            background: linear-gradient(transparent, rgba(255, 255, 255, 0.01), transparent);
+        }
+
+        .platform-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .platform-card {
+            padding: 2.5rem 2rem;
+            transition: all 0.4s cubic-bezier(.175, .885, .32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
             opacity: 0;
-            transform: translateY(10px);
-            transition: all 1s ease;
+            transition: opacity 0.35s;
         }
 
-        .active {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+        .platform-card:hover::before {
+            opacity: 1;
         }
 
-        header.scrolled {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+        .platform-card:hover {
+            border-color: rgba(99, 102, 241, 0.3) !important;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.15);
+        }
+
+        .platform-card .f-icon {
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .platform-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ── Market Opportunity / ROI ─────────────────────────────── */
+        .roi-section {
+            padding: 8rem 0;
+        }
+
+        .roi-wrap {
+            border-radius: 40px;
+            padding: 4rem 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roi-wrap::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-text);
+            opacity: 0.4;
+        }
+
+        .roi-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .roi-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .roi-stats-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .roi-stat {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .roi-stat:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .roi-stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            background: var(--gradient-text);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .roi-stat-label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ROI Chart */
+        .roi-chart {
+            margin-top: 2rem;
+        }
+
+        .roi-chart-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        .roi-bar-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .roi-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .roi-bar-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .roi-bar-track {
+            flex: 1;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .roi-bar-fill {
+            height: 100%;
+            border-radius: 14px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #fff;
+            transition: width 1.5s cubic-bezier(.16, 1, .3, 1);
+            width: 0;
+        }
+
+
+
+        .roi-advantages {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .roi-adv {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.1rem 1.4rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+
+        .roi-adv:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(6px);
+        }
+
+        .roi-adv-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .roi-adv span {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* ── Trusted By ──────────────────────────────────────────── */
+        .trusted-section {
+            padding: 6rem 0;
+        }
+
+        .trusted-pills {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .trusted-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+        }
+
+        .trusted-pill:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .trusted-pill i {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .trusted-pill span {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* ── Global Network Map ──────────────────────────────────── */
+        .network-section {
+            padding: 8rem 0;
+        }
+
+        .network-map-box {
+            max-width: 900px;
+            margin: 0 auto;
+            height: 380px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        /* ── About CTA ───────────────────────────────────────────── */
+        .about-cta-section {
+            padding: 8rem 0 10rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .about-cta-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-cta-inner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-cta-inner p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* ── Section Divider ─────────────────────────────────────── */
+        .section-line {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-line-inner {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+        }
+
+        /* ── Responsive ──────────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .who-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .roi-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-section {
+                padding: 140px 0 80px;
+                min-height: auto;
+            }
+
+            .about-hero-title {
+                font-size: 2.2rem;
+            }
+
+            .who-section,
+            .what-section,
+            .roi-section,
+            .network-section,
+            .about-cta-section {
+                padding: 5rem 0;
+            }
+
+            .platform-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .roi-wrap {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .trusted-pills {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .network-map-box {
+                height: 260px;
+                padding: 1.25rem;
+            }
+
+            .roi-bar-label {
+                min-width: 60px;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
 
-<body class="selection:bg-accent/20">
+<body>
+    <!-- Animated Background Gradients (same as index) -->
+    <div class="bg-gradient-1"></div>
+    <div class="bg-gradient-2"></div>
 
-    <!-- Minimal Navigation -->
-    <header class="navbar h-24 fixed top-0 w-full z-50 border-b border-white/[0.05]">
-        <div class="container mx-auto px-8 h-full flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold flex items-center gap-2">
-                <img src="assets/images/logo-icon.png" alt="LendIt" class="w-8 h-8" /> Lend<span
-                    class="text-accent">It</span>
-            </a>
-            <nav class="hidden md:flex items-center gap-12">
-                <a href="index.html"
-                    class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Home</a>
-                <a href="about.html" class="text-sm font-medium text-white border-b-2 border-accent pb-1">About Us</a>
-                <a href="index.html#features"
-                    class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Features</a>
-                <a href="index.html#roadmap"
-                    class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Roadmap</a>
+    <!-- Navigation (EXACT same as index.html) -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt" class="logo-img" />
+                Lend<span>It</span></a>
+            <nav class="nav-links">
+                <a href="index.html#how-it-works">How it Works</a>
+                <a href="index.html#features">Features</a>
+                <a href="about.html">About Us</a>
+                <a href="index.html#roadmap">Roadmap</a>
             </nav>
-            <a href="index.html#join" class="btn btn-outline py-2 px-6 text-sm">Join Beta</a>
+            <a href="index.html#join" class="btn btn-outline">Join Early Access</a>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-8 pt-48">
+    <main>
 
-        <!-- Part 1: Hero -->
-        <section class="text-center mb-40 reveal">
-            <p class="text-accent font-bold tracking-widest text-xs uppercase mb-8">Our Mission</p>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">We'd love to redefine item access.</h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
-                LendIt builds the infrastructure that makes local sharing effortless, secure, and instant for everyone.
-            </p>
-        </section>
-
-        <!-- Part 2: Centered Map (The Visual) -->
-        <section class="mb-48 reveal">
-            <div class="w-full h-[500px] border border-white/[0.1] rounded-[3rem] p-12 bg-white/[0.02]"
-                id="dotted-map-container">
-                <!-- React Mount -->
-            </div>
-        </section>
-
-        <!-- Part 3: Three Columns (The Content) -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-48 reveal">
-
-            <!-- Col 1 -->
-            <div>
-                <h3 class="text-xl font-bold mb-6">The Story</h3>
-                <p class="text-gray-400 text-base font-light leading-relaxed">
-                    Most high-value products sit idle 90% of the time. We turn these latent assets into community
-                    resources, reducing waste and clutter in every household.
-                </p>
-            </div>
-
-            <!-- Col 2 -->
-            <div>
-                <h3 class="text-xl font-bold mb-6">The Product</h3>
-                <p class="text-gray-400 text-base font-light leading-relaxed">
-                    A radius-based sharing protocol that manages everything: from identity verification and secure
-                    payments to dynamic insurance for every single item.
-                </p>
-            </div>
-
-            <!-- Col 3 -->
-            <div>
-                <h3 class="text-xl font-bold mb-6">The Success</h3>
-                <p class="text-gray-400 text-base font-light leading-relaxed">
-                    Targeting a $15B+ Indian rental market with a focus on student communities and dense urban
-                    tech-hubs, we are optimizing the way cities consume.
-                </p>
-            </div>
-
-        </section>
-
-        <!-- Part 4: Trajectory & ROI (Clean Lines) -->
-        <section class="bg-white/[0.02] border border-white/[0.05] rounded-[3rem] p-16 mb-48 reveal">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                <div>
-                    <h2 class="text-4xl font-extrabold mb-8">ROI Potential</h2>
-                    <div class="space-y-12">
-                        <div>
-                            <div class="text-4xl font-black text-white">$200B+</div>
-                            <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest font-bold">Global Sharing
-                                Economy</p>
-                        </div>
-                        <div>
-                            <div class="text-4xl font-black text-white">$15B+</div>
-                            <p class="text-gray-500 text-sm mt-1 uppercase tracking-widest font-bold">Indian Access
-                                Market</p>
-                        </div>
-                    </div>
+        <!-- ═══════════════════════════════════════════════════════════
+         1. HERO — Mission Statement
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="about-hero-section" id="about-hero">
+            <div class="container">
+                <div class="about-hero-inner reveal">
+                    <div class="about-badge">👥 Who We Are</div>
+                    <h1 class="about-hero-title">
+                        We are Building India's Largest<br>
+                        <span>Hyperlocal Sharing Network</span>
+                    </h1>
+                    <p class="about-hero-desc">
+                        LendIt is a community-first platform designed to unlock the value of idle products.
+                        We believe that access should be easier than ownership, and that your neighbors
+                        already own what you need.
+                    </p>
                 </div>
-                <div class="space-y-8">
-                    <div class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shrink-0 mt-1"><i
-                                class="fa-solid fa-check text-[10px] text-black"></i></div>
-                        <p class="text-gray-400 font-light leading-relaxed">Scalable marketplace model with zero
-                            inventory risk.</p>
+            </div>
+        </section>
+
+        <div class="section-line">
+            <div class="section-line-inner"></div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         2. WHO WE ARE
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="who-section" id="who-we-are">
+            <div class="container">
+                <div class="who-grid">
+                    <div class="who-content reveal">
+                        <div class="section-header" style="text-align: left; margin-bottom: 0;">
+                            <h2>We believe every product deserves more than one user.</h2>
+                        </div>
+                        <p>
+                            Millions of useful products — cameras, gaming consoles, power tools,
+                            musical instruments — sit idle <strong>90% of the time</strong>. Meanwhile,
+                            people who need them resort to buying items they'll barely use.
+                        </p>
+                        <p>
+                            LendIt was born from a simple idea: <strong>your neighbors already own
+                                what you need</strong>. We connect communities to share resources locally,
+                            creating a circular economy that reduces waste, saves money, and
+                            builds trust between people.
+                        </p>
+                        <p>
+                            We're not just an app — we're <strong>infrastructure for the sharing
+                                economy</strong>, designed to work at the hyperlocal level where real
+                            communities exist.
+                        </p>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shrink-0 mt-1"><i
-                                class="fa-solid fa-check text-[10px] text-black"></i></div>
-                        <p class="text-gray-400 font-light leading-relaxed">Monetization through micro-transaction fees
-                            and verification subscriptions.</p>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="w-6 h-6 rounded-full bg-accent flex items-center justify-center shrink-0 mt-1"><i
-                                class="fa-solid fa-check text-[10px] text-black"></i></div>
-                        <p class="text-gray-400 font-light leading-relaxed">Proprietary AI matching engine for optimized
-                            local logistics.</p>
+                    <div class="who-card glass-card reveal delay-1">
+                        <div class="who-card-icon">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <h3>Community First</h3>
+                        <p>Built for neighborhoods. Powered by trust. Designed for people who believe in sharing over
+                            owning.</p>
+                        <div class="who-mini-stats">
+                            <div class="who-mini-stat">
+                                <strong>90%</strong>
+                                <span>Items Idle</span>
+                            </div>
+                            <div class="who-mini-stat">
+                                <strong>5km</strong>
+                                <span>Radius</span>
+                            </div>
+                            <div class="who-mini-stat">
+                                <strong>0</strong>
+                                <span>Inventory</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Part 5: Final CTA Section -->
-        <section class="text-center mb-60 reveal">
-            <h2 class="text-4xl font-extrabold mb-10">Ready to join the network?</h2>
-            <a href="index.html#join"
-                class="btn btn-primary px-12 py-5 text-lg rounded-full shadow-[0_0_40px_rgba(168,85,247,0.3)]">Get Early
-                Access</a>
+        <div class="section-line">
+            <div class="section-line-inner"></div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         3. WHAT LENDIT DOES — Platform Features
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="what-section" id="what-lendit-does">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>What LendIt Does</h2>
+                    <p>A sharing protocol that handles everything — from discovery to delivery — within your
+                        neighborhood radius.</p>
+                </div>
+                <div class="platform-cards">
+                    <div class="platform-card glass-card reveal">
+                        <div class="f-icon"><i class="fa-solid fa-street-view"></i></div>
+                        <h3>Radius Discovery</h3>
+                        <p>
+                            AI-powered search finds available items within your configurable
+                            radius. Browse by category, availability, and ratings — all
+                            within walking distance.
+                        </p>
+                    </div>
+                    <div class="platform-card glass-card reveal delay-1">
+                        <div class="f-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Secure Transactions</h3>
+                        <p>
+                            End-to-end verified identity, escrow payments, and dynamic
+                            insurance for every item. Lend and borrow with confidence
+                            and zero risk.
+                        </p>
+                    </div>
+                    <div class="platform-card glass-card reveal delay-2">
+                        <div class="f-icon"><i class="fa-solid fa-people-arrows"></i></div>
+                        <h3>Community Lending</h3>
+                        <p>
+                            Build reputation through lending. Earn passive income from
+                            your idle assets. Join a trusted network of sharers in your
+                            local community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-line">
+            <div class="section-line-inner"></div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         4. MARKET OPPORTUNITY — ROI + Chart
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="roi-section" id="market-opportunity">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Market Opportunity</h2>
+                    <p>The sharing economy is accelerating. LendIt is positioned to capture it.</p>
+                </div>
+                <div class="roi-wrap glass-card reveal">
+                    <div class="roi-content">
+                        <!-- Left: Stats + Chart -->
+                        <div class="roi-stats-col">
+                            <div class="roi-stat">
+                                <div class="roi-stat-number">$200B+</div>
+                                <div class="roi-stat-label">Global Sharing Economy</div>
+                            </div>
+                            <div class="roi-stat">
+                                <div class="roi-stat-number">$15B+</div>
+                                <div class="roi-stat-label">Indian Access Market</div>
+                            </div>
+
+                            <!-- ROI Bar Chart -->
+                            <div class="roi-chart" id="roi-chart">
+                                <div class="roi-chart-title">Projected Growth by Segment</div>
+                                <div class="roi-bar-group">
+                                    <div class="roi-bar-item">
+                                        <div class="roi-bar-label">P2P Sharing</div>
+                                        <div class="roi-bar-track">
+                                            <div class="roi-bar-fill" data-width="85%" style="width: 0;">$170B</div>
+                                        </div>
+                                    </div>
+                                    <div class="roi-bar-item">
+                                        <div class="roi-bar-label">Rentals</div>
+                                        <div class="roi-bar-track">
+                                            <div class="roi-bar-fill" data-width="62%" style="width: 0;">$124B</div>
+                                        </div>
+                                    </div>
+                                    <div class="roi-bar-item">
+                                        <div class="roi-bar-label">India P2P</div>
+                                        <div class="roi-bar-track">
+                                            <div class="roi-bar-fill" data-width="40%" style="width: 0;">$15B</div>
+                                        </div>
+                                    </div>
+                                    <div class="roi-bar-item">
+                                        <div class="roi-bar-label">LendIt TAM</div>
+                                        <div class="roi-bar-track">
+                                            <div class="roi-bar-fill" data-width="28%" style="width: 0;">$5.6B</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Advantages -->
+                        <div class="roi-advantages">
+                            <div class="roi-adv">
+                                <div class="roi-adv-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <span>Zero Inventory Risk</span>
+                            </div>
+                            <div class="roi-adv">
+                                <div class="roi-adv-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <span>Scalable Marketplace Model</span>
+                            </div>
+                            <div class="roi-adv">
+                                <div class="roi-adv-icon"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+                                <span>Predictable Monetization</span>
+                            </div>
+                            <div class="roi-adv">
+                                <div class="roi-adv-icon"><i class="fa-solid fa-brain"></i></div>
+                                <span>AI-Powered Matching Engine</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-line">
+            <div class="section-line-inner"></div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         5. TRUSTED BY EARLY COMMUNITIES
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="trusted-section" id="trusted-by">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Trusted by Early Communities</h2>
+                    <p>Building credibility across India's fastest-growing user segments.</p>
+                </div>
+                <div class="trusted-pills reveal delay-1">
+                    <div class="trusted-pill">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Students</span>
+                    </div>
+                    <div class="trusted-pill">
+                        <i class="fa-solid fa-palette"></i>
+                        <span>Creators</span>
+                    </div>
+                    <div class="trusted-pill">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>Gamers</span>
+                    </div>
+                    <div class="trusted-pill">
+                        <i class="fa-solid fa-store"></i>
+                        <span>Local Businesses</span>
+                    </div>
+                    <div class="trusted-pill">
+                        <i class="fa-solid fa-camera"></i>
+                        <span>Photographers</span>
+                    </div>
+                    <div class="trusted-pill">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Co-working Spaces</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-line">
+            <div class="section-line-inner"></div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         6. GROWING COMMUNITY NETWORK — India Map
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="network-section" id="global-network">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Growing Community Network</h2>
+                    <p>LendIt is expanding across Indian cities and communities, building the future of hyperlocal
+                        sharing.</p>
+                </div>
+                <div class="network-map-box reveal delay-1" id="dotted-map-container">
+                    <!-- React Dotted Map renders here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         7. CALL TO ACTION
+         ═══════════════════════════════════════════════════════════ -->
+        <section class="about-cta-section" id="about-cta">
+            <div class="container">
+                <div class="about-cta-inner reveal">
+                    <h2>Ready to Join the Network?</h2>
+                    <p>
+                        Be part of the movement that's reshaping how communities share,
+                        access, and connect with each other.
+                    </p>
+                    <a href="index.html#join" class="btn btn-primary">
+                        Get Early Access <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <footer class="py-20 border-t border-white/[0.05] text-center">
-        <a href="index.html" class="text-lg font-bold mb-8 inline-block">Lend<span class="text-accent">It</span></a>
-        <p class="text-gray-500 text-sm mb-12">&copy; 2026 LendIt Technologies. A product of <a
-                href="https://www.alcas.in/" class="text-white hover:text-accent font-bold">ALCAS</a>.</p>
-        <div class="flex justify-center gap-10">
-            <a href="#"
-                class="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Twitter</a>
-            <a href="#"
-                class="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">LinkedIn</a>
-            <a href="#"
-                class="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Instagram</a>
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt"
+                        class="logo-img" />
+                    Lend<span>It</span></a>
+                <div class="product-attribution">
+                    <span class="attribution-label">A Product of</span>
+                    <a href="https://www.alcas.in/" target="_blank" class="alcas-link">
+                        <span class="alcas-name">ALCAS</span>
+                    </a>
+                </div>
+                <p>Borrow anything nearby. Instantly.</p>
+            </div>
+            <div class="footer-links">
+                <div class="f-column">
+                    <h4>Product</h4>
+                    <a href="index.html#how-it-works">How it works</a>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#roadmap">Roadmap</a>
+                </div>
+                <div class="f-column">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+                <div class="f-column">
+                    <h4>Social</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LendIt Technologies. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="assets/js/bundle.js"></script>
     <script src="script.js"></script>
+    <script>
+        /* ── ROI Bar Chart Animation ──────────────────────────── */
+        document.addEventListener('DOMContentLoaded', () => {
+            const chartEl = document.getElementById('roi-chart');
+            if (chartEl) {
+                const chartObs = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const bars = chartEl.querySelectorAll('.roi-bar-fill');
+                            bars.forEach((bar, i) => {
+                                setTimeout(() => {
+                                    bar.style.width = bar.getAttribute('data-width');
+                                }, i * 200);
+                            });
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                chartObs.observe(chartEl);
+            }
+        });
+    </script>
 </body>
 
 </html>

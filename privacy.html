@@ -4,35 +4,189 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy — LendIt</title>
-    <meta name="description" content="LendIt Privacy Policy and Data Handling." />
+    <title>Privacy Policy — LendIt | Secure Community Sharing</title>
+    <meta name="description"
+        content="Our Privacy Policy explains how LendIt collects, uses, and protects your information when using our hyperlocal sharing platform." />
     <link rel="shortcut icon" href="assets/images/logo-icon.png" type="image/x-icon" />
     <link rel="icon" href="assets/images/logo-icon.png" type="image/x-icon" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Project Styles (Tailwind output) -->
     <link rel="stylesheet" href="output.css" />
     <style>
-        body {
-            background-color: #0A0A0B;
-            color: #ffffff;
+        /* ============================================================
+       PRIVACY PAGE — Dedicated Typography & Layout
+       Prioritizing readability and spacing as requested.
+       ============================================================ */
+        :root {
+            /* Matching index/about color palette */
+            --privacy-bg: #0a0a0c;
+            --privacy-text: #f8fafc;
+            --privacy-muted: #94a3b8;
+            --privacy-accent: #6366f1;
+            --privacy-accent-light: rgba(99, 102, 241, 0.1);
+            --privacy-border: rgba(255, 255, 255, 0.08);
+            --privacy-font: "Inter", sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
+        body {
+            background-color: var(--privacy-bg);
+            color: var(--privacy-text);
+            font-family: var(--privacy-font);
+            line-height: 1.625;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Privacy Hero ─────────────────────────────────────────── */
+        .privacy-hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 56rem;
+            /* max-w-4xl */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .privacy-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .privacy-hero p {
+            color: var(--privacy-muted);
+            /* text-muted-foreground */
+            font-size: 1.125rem;
+            max-width: 42rem;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Policy Content ───────────────────────────────────────── */
+        .policy-content {
+            padding-bottom: 120px;
+        }
+
+        .content-container {
+            max-width: 48rem;
+            /* max-w-3xl */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .policy-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            /* space-y-10 */
+        }
+
+        .policy-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            /* space-y-6 */
+        }
+
+        .policy-section h2 {
+            font-size: 1.5rem;
+            /* text-2xl */
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.02em;
+        }
+
+        .policy-section p {
+            color: var(--privacy-muted);
+            /* text-muted-foreground */
+            line-height: 1.75;
+            /* leading-relaxed */
+            font-size: 1rem;
+        }
+
+        /* ── Contact Section ──────────────────────────────────────── */
+        .contact-section {
+            padding-top: 40px;
+            margin-top: 80px;
+            border-top: 1px solid var(--privacy-border);
+        }
+
+        .support-card {
+            background: var(--privacy-accent-light);
+            border: 1px solid var(--privacy-border);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            text-align: center;
+            max-width: 32rem;
+            margin: 0 auto;
+            transition: border-color 0.3s ease;
+        }
+
+        .support-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        .support-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .support-card p {
+            color: var(--privacy-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .support-email {
+            display: inline-block;
+            color: var(--privacy-accent);
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .support-email:hover {
+            opacity: 0.8;
+        }
+
+        /* ── Responsive Overrides ─────────────────────────────────── */
+        @media (max-width: 640px) {
+            .privacy-hero {
+                padding-top: 100px;
+            }
+
+            .privacy-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .support-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="bg-gradient-1" style="opacity: 0.5;"></div>
-
-    <!-- Navigation -->
-    <header class="navbar"
-        style="background: rgba(10, 10, 11, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top:0; z-index: 50;">
-        <div class="container nav-container items-center">
+    <!-- Navigation (Consistent with index/about) -->
+    <header class="navbar">
+        <div class="container nav-container">
             <a href="index.html" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt" class="logo-img" />
                 Lend<span>It</span></a>
             <nav class="nav-links">
@@ -45,151 +199,160 @@
         </div>
     </header>
 
-    <main class="min-h-screen pt-24 pb-24 relative px-6 md:px-12 w-full max-w-[1400px] mx-auto">
-        <!-- Header -->
-        <div class="max-w-7xl mx-auto mb-20 text-center relative z-10">
-            <div
-                class="inline-block mb-6 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold text-sm tracking-wide uppercase">
-                Legal</div>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">Privacy <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">Policy</span></h1>
-            <p class="text-xl text-gray-400">Your data, your rules. Transparent and secure practices.</p>
-            <p class="text-sm mt-4 text-gray-600 tracking-wide uppercase font-medium">Last Updated: March 2026</p>
-        </div>
-
-        <!-- Multi-Column Layout -->
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start relative z-10">
-
-            <!-- Left Column (Sticky Sidebar Navigation) -->
-            <div class="lg:col-span-4 hidden lg:block sticky top-36">
-                <div class="bg-[#121214] border border-white/5 shadow-2xl rounded-3xl p-8 backdrop-blur-xl">
-                    <h3 class="text-xs font-black text-gray-500 mb-6 uppercase tracking-[0.2em]">Table of Contents</h3>
-                    <nav class="flex flex-col space-y-4 text-gray-400 font-medium">
-                        <a href="#collect"
-                            class="hover:text-accent hover:translate-x-1 transition-all flex items-center gap-3">
-                            <span class="w-2 h-2 rounded-full bg-accent/30"></span> Information We Collect
-                        </a>
-                        <a href="#use"
-                            class="hover:text-accent hover:translate-x-1 transition-all flex items-center gap-3">
-                            <span class="w-2 h-2 rounded-full bg-accent/30"></span> How We Use It
-                        </a>
-                        <a href="#sharing"
-                            class="hover:text-accent hover:translate-x-1 transition-all flex items-center gap-3">
-                            <span class="w-2 h-2 rounded-full bg-accent/30"></span> Information Sharing
-                        </a>
-                        <a href="#security"
-                            class="hover:text-accent hover:translate-x-1 transition-all flex items-center gap-3">
-                            <span class="w-2 h-2 rounded-full bg-accent/30"></span> Data Security
-                        </a>
-                        <a href="#rights"
-                            class="hover:text-accent hover:translate-x-1 transition-all flex items-center gap-3">
-                            <span class="w-2 h-2 rounded-full bg-accent/30"></span> Your Privacy Rights
-                        </a>
-                    </nav>
-                </div>
+    <main>
+        <!-- Section 1: Privacy Hero -->
+        <section class="privacy-hero">
+            <div class="hero-container">
+                <h1 class="reveal">Privacy Policy</h1>
+                <p class="reveal delay-1">
+                    Your privacy is important to us. This policy explains how LendIt collects,
+                    uses, and protects your information when using our platform.
+                </p>
             </div>
+        </section>
 
-            <!-- Right Column (Policy Content) -->
-            <div class="lg:col-span-8 text-gray-300">
+        <!-- Section 2: Policy Content -->
+        <section class="policy-content">
+            <div class="content-container">
+                <div class="policy-sections reveal delay-2">
 
-                <!-- Card 1 -->
-                <section id="collect" class="mb-14 scroll-mt-32">
-                    <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                        <span
-                            class="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center text-lg border border-accent/20">01</span>
-                        Information We Collect
-                    </h2>
-                    <div
-                        class="bg-[#121214] border border-white/5 p-8 md:p-10 rounded-[2rem] leading-relaxed shadow-xl text-lg">
-                        <p class="mb-6">At LendIt, we believe in collecting only what is strictly necessary. We collect
-                            information you provide directly to us through the platform forms.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                            <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
-                                <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i
-                                        class="fa-regular fa-id-card text-accent"></i> Identity Data</h4>
-                                <p class="text-sm text-gray-400">First name, last name, business name, and connected
-                                    accounts.</p>
-                            </div>
-                            <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
-                                <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i
-                                        class="fa-regular fa-envelope text-accent"></i> Contact Data</h4>
-                                <p class="text-sm text-gray-400">Email addresses, phone numbers, and communication
-                                    preferences.</p>
-                            </div>
+                    <!-- 1. Information We Collect -->
+                    <div class="policy-section">
+                        <h2>1. Information We Collect</h2>
+                        <p>
+                            When you use LendIt, we collect information that you provided to us directly, such as your
+                            name, email address, and profile details. We also collect information about the products you
+                            list or borrow to ensure smooth transactions.
+                        </p>
+                        <p>
+                            We automatically collect certain technical information when you access our platform,
+                            including IP addresses, browser types, and usage data to improve your experience.
+                        </p>
+                    </div>
+
+                    <!-- 2. How We Use Your Information -->
+                    <div class="policy-section">
+                        <h2>2. How We Use Your Information</h2>
+                        <p>
+                            We use your information to facilitate hyperlocal sharing, process transactions, and verify
+                            user identities. This helps build a trusted community where users can lend and borrow with
+                            confidence.
+                        </p>
+                        <p>
+                            Additionally, we use data to analyze platform performance, troubleshoot technical issues,
+                            and communicate important updates or safety alerts regarding your account.
+                        </p>
+                    </div>
+
+                    <!-- 3. Sharing of Information -->
+                    <div class="policy-section">
+                        <h2>3. Sharing of Information</h2>
+                        <p>
+                            We do not sell your personal data to third parties. We only share information necessary to
+                            complete a lend/borrow transaction, such as sharing your approximate location or contact
+                            details with a verified match.
+                        </p>
+                        <p>
+                            Information may also be shared with service providers who assist in identity verification,
+                            payment processing, or when required by law to protect our community.
+                        </p>
+                    </div>
+
+                    <!-- 4. Data Security -->
+                    <div class="policy-section">
+                        <h2>4. Data Security</h2>
+                        <p>
+                            We implement industry-standard security measures, including encryption and secure socket
+                            layers (SSL), to protect your personal information from unauthorized access, alteration, or
+                            disclosure.
+                        </p>
+                        <p>
+                            While we strive to use commercially acceptable means to protect your data, no method of
+                            transmission over the internet is 100% secure.
+                        </p>
+                    </div>
+
+                    <!-- 5. Cookies and Tracking Technologies -->
+                    <div class="policy-section">
+                        <h2>5. Cookies and Tracking Technologies</h2>
+                        <p>
+                            LendIt uses cookies to remember your preferences and provide a more personalized experience.
+                            These small files are stored on your device and help us understand how you interact with our
+                            features.
+                        </p>
+                    </div>
+
+                    <!-- 6. Third-Party Services -->
+                    <div class="policy-section">
+                        <h2>6. Third-Party Services</h2>
+                        <p>
+                            Our platform may contain links to third-party websites or services. Please be aware that we
+                            are not responsible for the privacy practices of these external entities.
+                        </p>
+                    </div>
+
+                    <!-- 7. Your Privacy Rights -->
+                    <div class="policy-section">
+                        <h2>7. Your Privacy Rights</h2>
+                        <p>
+                            You have the right to access, update, or delete your personal information at any time
+                            through your account settings. You can also opt-out of certain data collection practices by
+                            contacting our support team.
+                        </p>
+                    </div>
+
+                    <!-- 8. Children's Privacy -->
+                    <div class="policy-section">
+                        <h2>8. Children's Privacy</h2>
+                        <p>
+                            LendIt is not intended for children under the age of 13. We do not knowingly collect
+                            personal information from children. If we become aware of such data, we will take steps to
+                            delete it immediately.
+                        </p>
+                    </div>
+
+                    <!-- 9. Changes to This Policy -->
+                    <div class="policy-section">
+                        <h2>9. Changes to This Policy</h2>
+                        <p>
+                            We may update our Privacy Policy from time to time. We will notify you of any changes by
+                            posting the new policy on this page and updating the "Last Updated" date.
+                        </p>
+                    </div>
+
+                    <!-- 10. Contact Information -->
+                    <div class="policy-section">
+                        <h2>10. Contact Information</h2>
+                        <p>
+                            If you have any questions or concerns regarding this Privacy Policy or our data practices,
+                            please reach out to our team.
+                        </p>
+                    </div>
+
+                    <!-- Section 3: Contact Support Block -->
+                    <div class="contact-section">
+                        <div class="support-card reveal">
+                            <h3>Contact Support</h3>
+                            <p>
+                                If you have questions regarding this Privacy Policy, please contact us. Our team is here
+                                to help you understand how your information is managed.
+                            </p>
+                            <a href="mailto:alcaswork2k25@gmail.com" class="support-email">alcaswork2k25@gmail.com</a>
                         </div>
                     </div>
-                </section>
 
-                <!-- Card 2 -->
-                <section id="use" class="mb-14 scroll-mt-32">
-                    <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                        <span
-                            class="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center text-lg border border-accent/20">02</span>
-                        How We Use It
-                    </h2>
-                    <div
-                        class="bg-[#121214] border border-white/5 p-8 md:p-10 rounded-[2rem] leading-relaxed shadow-xl text-lg">
-                        <p class="mb-6">We will only use your personal data when the law allows us to. Most commonly, we
-                            will use your personal data in the following circumstances to improve community trust.</p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-4">
-                                <div class="text-green-400 mt-1"><i class="fa-solid fa-check-circle"></i></div>
-                                <p><strong>Matching algorithms:</strong> To securely pair lenders and borrowers within a
-                                    5km radius safely.</p>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="text-green-400 mt-1"><i class="fa-solid fa-check-circle"></i></div>
-                                <p><strong>Transaction safety:</strong> Verifying user history and building community
-                                    verification scores.</p>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="text-green-400 mt-1"><i class="fa-solid fa-check-circle"></i></div>
-                                <p><strong>Communications:</strong> Alerting you when an item you requested becomes
-                                    available nearby.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Card 3 -->
-                <section id="security" class="mb-14 scroll-mt-32">
-                    <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                        <span
-                            class="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center text-lg border border-accent/20">03</span>
-                        Data Security
-                    </h2>
-                    <div
-                        class="bg-gradient-to-b from-[#121214] to-black/80 border border-white/5 p-8 md:p-10 rounded-[2rem] leading-relaxed shadow-xl text-lg relative overflow-hidden">
-                        <!-- Decorative lock BG -->
-                        <i
-                            class="fa-solid fa-lock absolute -right-10 -bottom-10 text-[10rem] text-white/5 rotate-[-15deg]"></i>
-                        <p class="relative z-10 text-gray-300">We have put in place military-grade encryption and
-                            appropriate security measures to prevent your personal data from being accidentally lost,
-                            used, or accessed in an unauthorized way. In addition, we limit access strictly to necessary
-                            core backend systems.</p>
-                    </div>
-                </section>
-
-                <!-- CTA -->
-                <div
-                    class="mt-16 p-10 bg-accent/10 rounded-[2rem] border border-accent/20 flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-sm">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Still have questions?</h3>
-                        <p class="text-gray-400 m-0">Reach out to our Data Protection Officer.</p>
-                    </div>
-                    <a href="contact.html" class="btn btn-primary shrink-0 px-8 py-4">Contact Privacy Team</a>
                 </div>
-
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-10 border-t border-white/10 pt-16 pb-8 bg-black/20 backdrop-blur-md">
+    <!-- Footer (Consistent with index/about) -->
+    <footer>
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="index.html" class="logo"><img src="assets/images/logo-icon.png" alt="LendIt"
-                        class="logo-img" /> Lend<span>It</span></a>
+                        class="logo-img" />
+                    Lend<span>It</span></a>
                 <div class="product-attribution">
                     <span class="attribution-label">A Product of</span>
                     <a href="https://www.alcas.in/" target="_blank" class="alcas-link">
@@ -208,14 +371,25 @@
                 <div class="f-column">
                     <h4>Company</h4>
                     <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="mailto:hello@lendit.co">Contact</a>
                     <a href="privacy.html">Privacy Policy</a>
+                </div>
+                <div class="f-column">
+                    <h4>Social</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LendIt Technologies. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="assets/js/bundle.js"></script>
+    <!-- Scripts for reveal animations -->
     <script src="script.js"></script>
 </body>
 

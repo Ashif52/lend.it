@@ -51,23 +51,25 @@ if (orbitingRootElement) {
 
 import { DottedMap } from './components/ui/dotted-map.jsx';
 
-// 3. Render Dotted Map Section
+// 3. Render Dotted Map Section (India-only glowing markers)
 const dottedMapRootElement = document.getElementById('dotted-map-container');
 if (dottedMapRootElement) {
     const dottedMapRoot = createRoot(dottedMapRootElement);
-    // Render markers matching the user prompt (Tokyo, Sydney, etc.)
     dottedMapRoot.render(
         <DottedMap
             markerColor="#a855f7"
             dotColor="#ffffff20"
             dotRadius={0.4}
             markers={[
-                { lat: 40.7128, lng: -74.0060, size: 0.6 }, // New York
-                { lat: 51.5074, lng: -0.1278, size: 0.8 }, // London
-                { lat: 25.2048, lng: 55.2708, size: 0.6 }, // Dubai
-                { lat: 1.3521, lng: 103.8198, size: 0.8 }, // Singapore
-                { lat: -33.8688, lng: 151.2093, size: 0.6 }, // Sydney
-                { lat: 35.6762, lng: 139.6503, size: 0.8 } // Tokyo
+                { lat: 19.0760, lng: 72.8777, size: 0.8 },  // Mumbai
+                { lat: 28.6139, lng: 77.2090, size: 0.8 },  // Delhi
+                { lat: 12.9716, lng: 77.5946, size: 0.7 },  // Bangalore
+                { lat: 17.3850, lng: 78.4867, size: 0.7 },  // Hyderabad
+                { lat: 13.0827, lng: 80.2707, size: 0.6 },  // Chennai
+                { lat: 18.5204, lng: 73.8567, size: 0.6 },  // Pune
+                { lat: 22.5726, lng: 88.3639, size: 0.6 },  // Kolkata
+                { lat: 23.0225, lng: 72.5714, size: 0.5 },  // Ahmedabad
+                { lat: 26.9124, lng: 75.7873, size: 0.5 },  // Jaipur
             ]}
         />
     );
